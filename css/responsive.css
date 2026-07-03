@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Responsive Design
+   Breakpoints: Laptop (1200px) / Tablet (992px) / Small Tablet (768px) /
+   Mobile (576px) / Landscape Mobile
+   ========================================================================== */
+
+/* -------------------- Laptop -------------------- */
+@media (max-width: 1200px) {
+  .container { padding: 0 24px; }
+  .details-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* -------------------- Tablet -------------------- */
+@media (max-width: 992px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(78%, 340px);
+    background: var(--gradient-navy);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 40px;
+    transition: right var(--transition);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+  }
+  .nav-menu.open { right: 0; }
+  .nav-menu .nav-link { color: var(--color-white); font-size: 1rem; }
+  .nav-menu .nav-link.nav-cta { border-color: var(--color-gold-light); color: var(--color-gold-light); }
+  .nav-toggle { display: flex; }
+
+  .location-grid { grid-template-columns: 1fr; }
+  .location-map, .location-map iframe { min-height: 320px; }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 180px;
+  }
+
+  .details-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* -------------------- Small Tablet -------------------- */
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(2.6rem, 12vw, 4rem); }
+  .hero-subtitle { font-size: 0.95rem; }
+
+  .about, .schedule, .gallery, .location, .rsvp, .details, .countdown {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .featured { padding-bottom: 80px; }
+
+  .countdown-grid { gap: 14px; }
+  .countdown-box { padding: 20px 6px; }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+
+  .form-row { grid-template-columns: 1fr; }
+  .rsvp-form { padding: 30px; }
+
+  .timeline::before { left: 22px; }
+  .timeline-icon { width: 44px; height: 44px; font-size: 0.95rem; }
+  .timeline-item { gap: 18px; }
+
+  .footer-contact { flex-direction: column; gap: 10px; }
+}
+
+/* -------------------- Mobile -------------------- */
+@media (max-width: 576px) {
+  .container { padding: 0 18px; }
+
+  .navbar { padding: 16px 0; }
+  .nav-logo-text { display: none; }
+
+  .hero-content { padding: 0 16px; }
+  .hero-title { font-size: clamp(2.3rem, 14vw, 3.2rem); }
+  .hero-date { font-size: 0.82rem; }
+  .btn { padding: 14px 26px; font-size: 0.82rem; }
+
+  .section-title { font-size: 1.7rem; }
+
+  .details-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .detail-card { padding: 24px 14px; }
+  .detail-card h3 { font-size: 0.95rem; }
+  .detail-card p { font-size: 0.82rem; }
+
+  .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+  .gallery-item--tall { grid-row: span 1; }
+
+  .qr-card { padding: 22px; }
+
+  .rsvp-form { padding: 22px; }
+
+  .footer-social { flex-wrap: wrap; }
+}
+
+/* -------------------- Landscape Mobile -------------------- */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero { height: auto; min-height: 100vh; padding: 100px 0 60px; }
+  .scroll-indicator { display: none; }
+  .loader-monogram { width: 90px; height: 90px; }
+}
+
+/* -------------------- Extra Small -------------------- */
+@media (max-width: 380px) {
+  .details-grid { grid-template-columns: 1fr; }
+  .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .hero-title { font-size: 2.1rem; }
+}
