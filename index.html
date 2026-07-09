@@ -50,18 +50,6 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-const music = document.getElementById("bgMusic");
-
-function startMusic() {
-    music.volume = 0.5;
-    music.play();
-
-    document.removeEventListener("click", startMusic);
-    document.removeEventListener("touchstart", startMusic);
-}
-
-document.addEventListener("click", startMusic);
-document.addEventListener("touchstart", startMusic);
   {
     "@context": "https://schema.org",
     "@type": "Event",
@@ -134,9 +122,11 @@ document.addEventListener("touchstart", startMusic);
   <main id="main">
 
     <!-- ===================== Hero Section ===================== -->
-    <audio id="bgMusic" loop>
-     <source src="audio/audio.mp3" type="audio/mpeg">
-    </audio>
+<button id="musicBtn">🔇</button>
+
+<audio id="bgMusic" loop>
+    <source src="audio/audio.mp3" type="audio/mpeg">
+</audio>
     <section id="hero" class="hero">
       <div class="hero-media">
         <img src="images/hero.jpg" alt="Golden-hour view across the vineyard terrace at Château Vellamare, where Thanh Thanh and Hoàng Sơn will marry" class="hero-img" loading="eager" fetchpriority="high">
