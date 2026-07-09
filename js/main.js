@@ -20,6 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Failsafe in case 'load' fires unusually late (slow external assets)
   setTimeout(hideLoader, 3500);
 
+const music = document.getElementById('bgMusic');
+// setTimeout(music.play(), 1000);
+// music.play();
+const btn = document.getElementById('musicBtn');
+
+btn.addEventListener('click', () => {
+    if (music.paused) {
+        music.play();
+        btn.textContent = '🔊';
+    } else {
+        music.pause();
+        btn.textContent = '🔇';
+    }
+});
+
 
   /* ---------------------------------------------------------------------
      2. AOS (Animate On Scroll) init

@@ -2,7 +2,19 @@
    Elena & Marcus — Wedding Invitation
    Core Stylesheet
    ========================================================================== */
-
+#musicBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 50%;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 /* -------------------- Design Tokens -------------------- */
 :root {
   /* Palette */
